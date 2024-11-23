@@ -6,11 +6,13 @@
     --header-height: 3.5rem;
     --primary: #4a4a4a;
     --primary-alt: #575757;
-    --linear-gradient: linear-gradient(54deg, rgba(45, 45, 45, 0.95) 34%, rgba(45, 45, 45.95));
+    --linear-gradient:  linear-gradient(90deg, hsla(222, 100%, 56%, 1) 30%, hsla(212, 100%, 75%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1F62FF", endColorstr="#82BCFF", GradientType=1 );
     --text-color: #555;
-    --text-alt: #999;
-    --bg-color: #fff;
-    --bg-color-alt: #e9ecef;
+    --text-alt: #ddd;
+    --bg-color: #87CEEB;
+    --bg-color-alt: #B0E2FF;
     --border: #f1f1f1;
     --body-font: 'Space Grotesk', sans-serif;
     --h1-font-size: 2.75rem;
@@ -23,6 +25,8 @@
     --font-semibold: 600;
     --font-bold: 700;
 }
+
+
 
 /* ==================== Base ==================== */
 * {
@@ -42,7 +46,7 @@ body, button, input , textarea {
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: #fff;
     color: var(--text-color);
     line-height: 1.5rem;
 }
@@ -92,8 +96,10 @@ input, textarea {
 
 /* ==================== Home ==================== */
 .home {
-    background: url("https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center/cover;
-    padding-top: 5.5rem;
+    background: url("https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding-top: 2.5rem;
     position: relative;
 }
 
@@ -120,4 +126,45 @@ input, textarea {
     width: 90%;
     height: 380px;
     object-fit: cover;
+    border-radius: .25rem;
+    box-shadow: 0 12px 24px hsla(0, 0%, 10%, .2);
+    transform: translateY(3.125rem);
+}
+
+
+.home__name,.home__work,.home__list, .home__social-link{
+    color: #fff;
+}
+
+.home__name{
+    font-size: var(--h1-font-size);
+    line-height: 1.14em;
+    margin: 0.9em 0 0.23em;
+}
+
+.home__work {
+    margin-bottom: 2.5em;
+}
+
+.home__list dt {
+    float: left;
+    width: 4em;
+    color: var(--text-alt);
+    font-weight: var(--font-semibold);
+}
+.home__list dd {
+    margin-left: 5em;
+    margin-bottom: 0.75em;
+}
+
+.home__socials {
+    margin-top: 1.125rem;
+    display: flex;
+    align-items: center;
+}
+
+.home__social-link {
+    color: #fff;
+    font-size: 1.125rem;
+    margin-right: 1.25rem;
 }
