@@ -1,0 +1,71 @@
+/* Google Fonts -  Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    --header-height: 3.5rem;
+    --primary: #4a4a4a;
+    --primary-alt: #575757;
+    --linear-gradient: linear-gradient(54deg, rgba(45, 45, 45, 0.95) 34%, rgba(45, 45, 45.95));
+    --text-color: #555;
+    --text-alt: #999;
+    --bg-color: #fff;
+    --bg-color-alt: #e9ecef;
+    --border: #f1f1f1;
+    --body-font: 'Space Grotesk', sans-serif;
+    --h1-font-size: 2.75rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.74rem;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: .5s ease;
+    line-height: 1.5rem;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+input, textarea {
+    outline: none;
+    background: none;
+
+}
+
+
+
+/* Reutilizables */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
