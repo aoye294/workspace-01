@@ -4,16 +4,14 @@
 /* ==================== CSS Variables ==================== */
 :root {
     --header-height: 3.5rem;
-    --primary: #4a4a4a;
-    --primary-alt: #575757;
-    --linear-gradient:  linear-gradient(90deg, hsla(222, 100%, 56%, 1) 30%, hsla(212, 100%, 75%, 1) 100%);
-    
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1F62FF", endColorstr="#82BCFF", GradientType=1 );
+    --primary: hsla(222, 100%, 56%, 1);
+    --primary-alt: hsla(222, 100%, 46%, 1);
+    --linear-gradient: linear-gradient(90deg, hsla(222, 100%, 56%, 1) 30%, hsla(222, 100%, 75%, 1) 100%);
     --text-color: #555;
     --text-alt: #ddd;
-    --bg-color: #87CEEB;
-    --bg-color-alt: #B0E2FF;
-    --border: #f1f1f1;
+    --bg-color: hsla(222, 100%, 85%, 1);
+    --bg-color-alt: hsla(222, 100%, 90%, 1);
+    --border: hsla(222, 100%, 95%, 1);
     --body-font: 'Space Grotesk', sans-serif;
     --h1-font-size: 2.75rem;
     --h2-font-size: 2.25rem;
@@ -94,6 +92,28 @@ input, textarea {
     display: grid;
 }
 
+.section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+}
+
+.section__title {
+    font-size: var(--h2-font-size);
+    margin-bottom: 1.12rem;
+    font-weight: var(--font-semibold);
+}
+
+.text-lg {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    line-height: 1.875rem;
+}
+
+.text-sm {
+    font-size: var(--small-font-size);
+    line-height: 1.43em;
+}
+
 
 /* ==================== Header ==================== */
 .header {
@@ -113,6 +133,7 @@ input, textarea {
 .nav__list {
     display: flex;
     column-gap: 3.25rem;
+    width: 100%;
 }
 
 .nav__close, .nav__toggle {
@@ -126,7 +147,6 @@ input, textarea {
 .nav__link {
     color: #fff;
     font-weight: var(--font-semibold);
-    text-transform: uppercase;
     opacity: 1;
     transition: opacity .5s ease;
     position: relative;
@@ -148,9 +168,12 @@ input, textarea {
 }
 
 .nav__link:hover::before {
-    width: 50%;
+    width: 100%;
 }
 
+.active-link::before {
+    width: 50%;
+}
 
 
 /* ==================== Home ==================== */
@@ -158,6 +181,7 @@ input, textarea {
     background: url("https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-size: cover;
     background-position: 50%;
+    margin-bottom: 2.5rem;
     padding-top: 2.5rem;
     position: relative;
 }
@@ -170,6 +194,7 @@ input, textarea {
     width: 100%;
     height: 100%;
     background: var(--linear-gradient);
+    opacity: .90;
 }
 
 .home__container {
@@ -182,12 +207,25 @@ input, textarea {
 }
 
 .home__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+
+.home__img:hover {
+    transform: scaleX(1.10) scaleY(1.10);
+}
+
+.home__img-container {
+    position: relative;
     width: 90%;
     height: 380px;
-    object-fit: cover;
-    border-radius: .25rem;
-    box-shadow: 0 12px 24px hsla(0, 0%, 10%, .2);
+    overflow: hidden;
+    z-index: 10;
     transform: translateY(3.125rem);
+    border-radius: .25rem;
 }
 
 .home__name,.home__work,.home__list, .home__social-link{
@@ -232,4 +270,106 @@ input, textarea {
 
 .home__social-link:hover{
     opacity: 1;
+}
+
+/* ==================== Hello ==================== */
+.hello__details {
+    margin-bottom: 1.67em;
+    text-align: justify;
+}
+
+
+/* ==================== Buttons ==================== */
+.button{
+    display: inline-flex;
+    background: var(--primary);
+    color: #fff;
+    padding: 1.125rem 1.875rem;
+    border-radius: 2.5rem;
+    transition: background .5s ease;
+    cursor: pointer;
+    font-weight: var(--font-semibold);
+    align-items: center;
+    column-gap: .5rem;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background: var(--primary-alt);
+}   
+
+
+
+/* ==================== Media Queries ==================== */
+/* For small devices */
+@media screen and (max-width: 767px) {
+    .container {
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        padding: 3.5rem 1.875rem 1.875rem;
+        transition: right .5s ease;
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #fff;
+    }
+    
+
+    .nav__list {
+        flex-direction: column;
+        row-gap: 1.875rem;
+    }
+
+    .nav__link {
+        font-size: var(--h2-font-size);
+    }
+
+    .nav__toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #fff;
+        display: block;
+    }
+
+    .show-menu {
+        right: 0;
+    }
+
+    .home__container {
+        grid-template-columns: 1fr;
+        row-gap: 1.875rem;
+    }
+
+    .home__img {
+        display: none;
+    }
+
+    .home__socials {
+        margin-bottom: 1.875rem;
+    }
+    .home__data .home__name{
+        font-size: 1.5rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .home__container {
+        grid-template-columns: 4fr 8fr;
+        column-gap: 1.875rem;
+    }
 }

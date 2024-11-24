@@ -20,13 +20,25 @@
       <nav class="nav container">
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active-link">Hello</a></li>
-          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-          <li class="nav__item"><a href="#resume" class="nav__link">Resume</a></li>
-          <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
-          <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Hello</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="#resume" class="nav__link">Resume</a>
+            </li>
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link">Portfolio</a>
+            </li>
+            <li class="nav__item">
+              <a href="#blog" class="nav__link">Blog</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
         </div>
         <div class="nav__close" id="nav-close">
           <i class="fa-solid fa-xmark"></i>
@@ -37,14 +49,18 @@
       </nav>
     </header>
 
+    <!-- Main -->
     <main class="main">
+      <!-- Home -->
       <section class="home" id="home">
         <div class="home__container container grid">
-          <img
+          <div class="home__img-container">
+            <img
             src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
             class="home__img"
           />
+          </div>
           <div class="home__data">
             <h1 class="home__name">Amalio Osa Oye</h1>
             <p class="home__work">
@@ -79,6 +95,19 @@
             </div>
           </div>
         </div>
+      </section>
+      <!-- Hello -->
+      <section class="hello section container">
+        <h2 class="section__title">Hi_</h2>
+        <p class="hello__details text-lg">Soy un estudiante de Ingeniería Electrónica, actualmente cursando mi último año en la Universidad de Zaragoza.
+          <br>
+          Mi pasión por la tecnología y la programación me ha llevado a explorar diversos campos dentro de la electrónica, desde el diseño de circuitos hasta el desarrollo de software.
+          <br>
+          Durante mi formación académica, he participado en varios proyectos que han fortalecido mis habilidades técnicas y de colaboración. Tengo experiencia en lenguajes como C++, Python y JavaScript.
+          <br>
+          Mi objetivo es especializarme en el desarrollo de sistemas embebidos y contribuir a proyectos que combinen hardware y software de manera innovadora.
+        </p>
+        <a href="assets/pdf/Amalio_Osa_Oye_CV.pdf" class="button button-flex text-sm"> <i class="fa-solid fa-download" ></i> Download CV</a>
       </section>
     </main>
   </body>
